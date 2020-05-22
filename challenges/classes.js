@@ -28,24 +28,25 @@ class CuboidMaker1 {
   });
 
   class CubeMaker extends CuboidMaker1 {
-    constructor(attrs) {
-      super(attrs);
+    constructor(side) {
+      super({
+        length: side,
+        width: side,
+        height: side,
+      });
     }
-    cubeVolume(subject) {
-      return `Today we are learning about ${subject}`;
+    cubeVolume() {
+      return Math.pow(this.length, 3);
     }
-    cubeSurfaceArea(student, subject) {
-      return `${student.name} receives a perfect score on ${subject}`;
+    cubeSurfaceArea() {
+      return 6 * this.length * this.length;
     }
   };
   
-  const cube1 = new CubeMaker ({
-    length: ,
-    width: ,
-    height: ,
-  });
+  const cube1 = new CubeMaker(4);
 
 
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
-
+console.log(cube1.cubeVolume());
+console.log(cube1.cubeSurfaceArea());
